@@ -57,6 +57,7 @@ function GetSpotifyPlaylistArtistsWithShows({followedArtists, setFollowedArtists
                     value={spotifyPlayList} onChange={(e) => setSpotifyPlaylist(e.target.value)}
                 />
                 <Button
+                    disabled={spotifyPlayList.length === 0 ? true : false}
                     type="submit"
                     variant="contained"
                     color="primary">
