@@ -32,6 +32,9 @@ function GetSpotifyPlaylistArtistsWithShows({followedArtists, setFollowedArtists
                 );
                 setFollowedArtists(updatedArtists);
             }
+            else{
+                alert(`${res.status}: ${res.statusText}`)
+            }
             return;
         }).catch((err) => {
             console.log("Some error occured");
