@@ -3,6 +3,7 @@ import { Grid, Stack, TextField, Button } from '@mui/material';
 
 function GetSpotifyPlaylistArtistsWithShows({followedArtists, setFollowedArtists, startDate, endDate, setIsRequestTriggered}) {
     const [spotifyPlayList, setSpotifyPlaylist] = useState("");
+    const initialStringUrl = "https://open.spotify.com/playlist/"
     let handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -57,7 +58,7 @@ function GetSpotifyPlaylistArtistsWithShows({followedArtists, setFollowedArtists
                     value={spotifyPlayList} onChange={(e) => setSpotifyPlaylist(e.target.value)}
                 />
                 <Button
-                    disabled={spotifyPlayList.length === 0 ? true : false}
+                    disabled={spotifyPlayList.length === 0 || !(spotifyPlayList.includes(initialStringUrl)) ? true : false}
                     type="submit"
                     variant="contained"
                     color="primary">
